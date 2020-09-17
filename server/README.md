@@ -1,3 +1,39 @@
+
+## Description
+[simple-bug-tracker](https://github.com/fhenderson/simple-bug-tracker) minimalist application to demonstrate some of my coding abilities.
+
+This application is using [Nest](https://github.com/nestjs/nest) framework to implement the necessarily backend code to support the application.
+
+### Status of basic features implementation
+- [ ] Server
+    - [x] Initialise Nest JS framework
+    - [ ] Adding User authentication
+    - [ ] Adding mongoDB connection
+- [ ] Client
+    - [ ] Create React application framework
+    - [ ] Create login page using React
+    - [ ] Add authentication using Google
+    - [ ] Add authentication using GitHub
+    - [ ] Add authentication using token sent to email for single login
+    - [ ] Create barebone of Bug tracker functionalities
+        - [ ] Create bug
+        - [ ] List Bugs
+        - [ ] Bug editing/management 
+
+### Second phase will have the following features
+- [ ] Server
+    - [ ] Add authentication using Google
+    - [ ] Add authentication using GitHub
+    - [ ] Add authentication using token sent to email for single login
+- [ ] Client
+    - [ ] Add authentication using Google
+    - [ ] Add authentication using GitHub
+    - [ ] Add authentication using token sent to email for single login
+     
+
+<hr/>
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -24,9 +60,6 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
