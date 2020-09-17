@@ -6,7 +6,7 @@ Minimalist bug tracker using MongoDB, Nest.js, React and Redux
 ### Status of basic features implementation
 - [ ] Server
     - [x] Initialise Nest JS framework
-    - [ ] Adding User authentication
+    - [x] Adding User authentication with static users
     - [ ] Adding mongoDB connection
 - [ ] Client
     - [ ] Create React application framework
