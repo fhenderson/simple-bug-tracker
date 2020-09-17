@@ -7,7 +7,8 @@ This application is using [Nest](https://github.com/nestjs/nest) framework to im
 ### Status of basic features implementation
 - [ ] Server
     - [x] Initialise Nest JS framework
-    - [ ] Adding User authentication
+    - [x] Adding User authentication with static users
+    - [x] Adding JWT token
     - [ ] Adding mongoDB connection
 - [ ] Client
     - [ ] Create React application framework
