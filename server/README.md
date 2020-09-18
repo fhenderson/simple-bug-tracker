@@ -11,7 +11,11 @@ This application is using [Nest](https://github.com/nestjs/nest) framework to im
     - [x] Adding JWT token
     - [ ] Adding mongoDB connection
 - [ ] Client
-    - [ ] Create React application framework
+    - [x] Create React application framework with create-react-app and with Typescript template
+        - [ ] Add Material-UI
+        - [ ] Add react-router-dom
+        - [ ] Add and setup redux
+        - [ ] Add and setup linting and prettify
     - [ ] Create login page using React
     - [ ] Add authentication using Google
     - [ ] Add authentication using GitHub
@@ -20,6 +24,7 @@ This application is using [Nest](https://github.com/nestjs/nest) framework to im
         - [ ] Create bug
         - [ ] List Bugs
         - [ ] Bug editing/management 
+    - [ ] Add Jest Unit-tests
 
 ### Second phase will have the following features
 - [ ] Server
