@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createMuiTheme, CssBaseline, Typography, useTheme } from '@material-ui/core'
+import IconButton from '@material-ui/core/IconButton'
+import Brightness4Icon from '@material-ui/icons/Brightness4'
+import Brightness7Icon from '@material-ui/icons/Brightness7'
 
-function App() {
+import ThemeProvider, { useChangeTheme } from './themes/CustomThemeProvider'
+import logo from './logo.svg'
+
+import './App.css'
+
+const ToggleTheme: React.FC = () => {
+  const theme = useTheme()
+  const changeTheme = useChangeTheme()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <IconButton title="Toggle light/dark mode" onClick={() => changeTheme()}>
+        {theme.palette.type === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
+      </IconButton>
+      <Typography>Clicking on the Toggle Icon above will change my color</Typography>
     </div>
-  );
+  )
 }
 
-export default App;
+function App(): React.ReactNode {
+  const theme = createMuiTheme({
+    palette: {
+      type: 'light',
+    },
+  })
+
+  return (
+    <ThemeProvider theme={theme}>
+      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <CssBaseline />
+      <div className="App">
+        <ToggleTheme />
+        <hr />
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
+    </ThemeProvider>
+  )
+}
+
+export default App

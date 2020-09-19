@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.0.4",
     "@testing-library/user-event": "^12.1.5",
@@ -11,8 +13,14 @@
     "@types/node": "^14.11.1",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
+    "core-js": "^3.6.5",
+    "prettier": "^2.1.2",
+    "prettify": "^0.1.7",
+    "pretty-quick": "^3.0.2",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -20,13 +28,23 @@
     "typescript": "~3.9.7"
   },
   "scripts": {
+    "prettify": "pretty-quick --staged --no-semi",
+    "prettify:write": "prettier --no-semi --write \"src/**/*.js\" \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "prettify:check": "prettier --check --no-semi \"src/**/*.js\" \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "lint": "eslint --fix && echo 'Lint complete.'",
+    "lint:check": "eslint",
+    "lint:debug": "eslint --fix --debug",
+    "lint2": "eslint --ext .ts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -41,9 +59,26 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/material-ui": "^0.21.8",
+    "@types/react-helmet": "^6.1.0",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
-    "@types/redux": "^3.6.0"
+    "@types/redux": "^3.6.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^24.0.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "types": "^0.1.0"
   }
 }
