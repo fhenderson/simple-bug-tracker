@@ -22,7 +22,7 @@ const ToggleTheme: React.FC = () => {
   )
 }
 
-function App(): React.ReactNode {
+function App(): any {
   const theme = createMuiTheme({
     palette: {
       type: 'light',

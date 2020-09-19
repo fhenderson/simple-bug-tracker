@@ -2,6 +2,8 @@ import React from 'react'
 import { createMuiTheme, Theme, ThemeProvider as MuiThemeProvider } from '@material-ui/core'
 import { useTheme } from '@material-ui/core/styles'
 
+import Fonts from '../assets/fonts'
+
 interface ThemeProviderProps {
   children: React.ReactNode
   theme: Theme
@@ -32,6 +34,36 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
       ...theme,
       palette: {
         type: themeOptions.paletteType,
+      },
+      typography: {
+        fontFamily: [
+          'Roboto',
+          'Arial',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+        ].join(','),
+      },
+      shape: {
+        borderRadius: 0.5,
+      },
+      zIndex: {
+        appBar: 1200,
+        drawer: 1100,
+      },
+      overrides: {
+        MuiCssBaseline: {
+          '@global': {
+            '@font-face': [
+              Fonts.MetropolisRegular,
+              Fonts.MetropolisBold,
+              Fonts.RobotoRegular,
+              Fonts.RobotoMedium,
+              Fonts.RobotoBold,
+            ],
+          },
+        },
       },
     })
   }, [theme, themeOptions.paletteType])
