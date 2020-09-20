@@ -12,9 +12,9 @@ const ToggleTheme: React.FC = () => {
   const theme = useTheme()
   const changeTheme = useChangeTheme()
   return (
-    <Tooltip TransitionComponent={Zoom} title="Clicking on the Toggle Icon above will change my color">
-      <IconButton title="Toggle light/dark mode" onClick={() => changeTheme()}>
-        {theme.palette.type === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
+    <Tooltip TransitionComponent={Zoom} title="Toggle light/dark mode">
+      <IconButton onClick={() => changeTheme()}>
+        {theme.palette.type === 'light' ? <Brightness4Icon /> : <Brightness7Icon color={'action'} />}
       </IconButton>
     </Tooltip>
   )

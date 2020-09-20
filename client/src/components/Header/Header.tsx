@@ -18,7 +18,9 @@ const Header = (): any => {
       justifyContent={'space-between'}
       flexGrow={1}
     >
-      <Typography variant="h6">Simple Bug Tracker Application</Typography>
+      <Typography variant="h6" color={'inherit'}>
+        Simple Bug Tracker Application
+      </Typography>
       <ToggleTheme />
     </Box>
   )
