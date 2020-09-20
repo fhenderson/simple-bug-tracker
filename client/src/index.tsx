@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 
 import './lib/polyfill'
 
-import App from './App'
+import App from './components/App/App'
 import * as serviceWorker from './serviceWorker'
 
 import './index.css'
