@@ -4,6 +4,7 @@ import { Redirect, Route } from 'react-router-dom'
 import tokenService from '../service/tokenService'
 
 import PATH_CODES from './pathnames'
+import StandardLayoutRoute from './StandardLayoutRoute'
 
 type Props = {
   history: any | undefined
@@ -13,15 +14,16 @@ type Props = {
 }
 
 function PrivateRoute(props: Props) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { component: Component, ...rest } = props
   const token = tokenService.currentTokenValue
 
   return (
     <Route
       {...rest}
-      render={props =>
+      render={() =>
         token ? (
-          <Component {...props} />
+          <StandardLayoutRoute {...props} />
         ) : (
           <Redirect to={{ pathname: PATH_CODES.LOGIN, state: { referer: props.location } }} />
         )

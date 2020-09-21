@@ -48,8 +48,8 @@ const LoginComponent = (props: Props): JSX.Element => {
     authenticationService.login(credentials).then(res => {
       console.log({ res })
       if (res.status === 201) {
-        if (res?.data?.result) {
-          tokenService.updateCurrentTokenValue(res.data.result)
+        if (res?.data?.access_token) {
+          tokenService.updateCurrentTokenValue(res.data.access_token)
         }
         history.push('/home')
       } else {

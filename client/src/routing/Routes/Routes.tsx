@@ -3,7 +3,7 @@ import { Route, Router, Switch, withRouter } from 'react-router-dom'
 
 import LoginComponent from '../../components/LoginComponent/LoginComponent'
 import PATH_CODES from '../pathnames'
-// import PrivateRoute from '../PrivateRoute'
+import PrivateRoute from '../PrivateRoute'
 
 type Props = {
   history: any
@@ -11,9 +11,8 @@ type Props = {
 }
 
 const Routes = (props: Props) => {
-  const { history } = props
   return (
-    <Router history={history}>
+    <Router history={props.history}>
       <Switch>
         <Route path={PATH_CODES.ROOT} exact component={LoginComponent} />
         <Route
@@ -23,9 +22,7 @@ const Routes = (props: Props) => {
           component={LoginComponent}
           privateRedirectPath={PATH_CODES.HOME}
         />
-        <Route path="/home" component={() => <h1>Home</h1>} />
-        {/*<Route path="/add-user" component={AddUserComponent} />*/}
-        {/*<Route path="/edit-user" component={EditUserComponent} />*/}
+        <PrivateRoute component={() => <h1>Home</h1>} path={PATH_CODES.HOME} {...props} />
       </Switch>
     </Router>
   )
