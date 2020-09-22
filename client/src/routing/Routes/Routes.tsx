@@ -5,7 +5,7 @@ import BugsList from '../../components/Bugs/BugsList'
 import LoginComponent from '../../components/LoginComponent/LoginComponent'
 import { ErrorLayoutRoute } from '../index'
 import PATH_CODES from '../pathnames'
-import PrivateRoute from '../PrivateRoute'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 type Props = {
   history: any

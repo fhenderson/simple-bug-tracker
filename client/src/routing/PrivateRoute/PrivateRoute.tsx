@@ -1,10 +1,9 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
-import tokenService from '../service/tokenService'
-
-import PATH_CODES from './pathnames'
-import StandardLayoutRoute from './StandardLayoutRoute'
+import tokenService from '../../service/tokenService'
+import PATH_CODES from '../pathnames'
+import StandardLayoutRoute from '../StandardLayoutRoute/StandardLayoutRoute'
 
 type Props = {
   history: any | undefined
