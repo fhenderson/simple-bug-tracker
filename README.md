@@ -4,6 +4,7 @@ Minimalist bug tracker using MongoDB, Nest.js, React and Redux
 ## Currently in progress
 
 ### Status of basic features implementation
+- [ ] Add code comments and generate jsDocs
 - [ ] Server
     - [x] Initialise Nest JS framework
     - [x] Adding User authentication with static users
@@ -19,19 +20,19 @@ Minimalist bug tracker using MongoDB, Nest.js, React and Redux
         - [x] Add Material-UI
             - [x] Add Infrastructure for theme switching
         - [x] Add react-router-dom
-            - [ ] Add Public and Private routes
+            - [x] Add Public and Private routes
         - [ ] Add and setup redux
             - [ ] Add Infrastructure for redux store
         - [x] Add and setup linting and prettify
     - [ ] Create login page
-        - [ ] Add authentication using token sent to email for single login
+        - [x] Add authentication using token sent to email for single login
+        - [ ] Add form validations
     - [ ] Create barebone of Bug tracker functionalities
         - [ ] Create bug
         - [ ] List Bugs
         - [ ] Bug editing/management 
     - [ ] Add Jest Unit-tests 
     - [ ] Add Storybook
-
 
 ### Second phase will have the following features
 - [ ] Server
@@ -42,6 +43,7 @@ Minimalist bug tracker using MongoDB, Nest.js, React and Redux
     - [ ] Add Users APIs
 - [ ] Client
     - [ ] Add Error Boundary
+    - [ ] Handle user registration
     - [ ] Add authentication using Google
     - [ ] Add authentication using GitHub
     - [ ] Add authentication using token sent to email for single login
