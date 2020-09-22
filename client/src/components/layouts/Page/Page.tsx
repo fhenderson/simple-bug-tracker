@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { Helmet } from 'react-helmet'
 import useTheme from '@material-ui/core/styles/useTheme'
 
-import ThemeProvider from '../../themes/CustomThemeProvider'
+import ThemeProvider from '../../../themes/CustomThemeProvider'
 
 interface IOwnProps {
   children: any

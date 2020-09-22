@@ -4,7 +4,7 @@ import { Box, Container, makeStyles, Typography } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
 import PATH_CODES from '../../../routing/pathnames'
-import Page from '../../Page/Page'
+import Page from '../../layouts/Page/Page'
 
 const useStyles = makeStyles(theme => ({
   root: {
