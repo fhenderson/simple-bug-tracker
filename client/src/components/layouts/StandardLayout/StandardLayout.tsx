@@ -5,8 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import { makeStyles } from '@material-ui/styles'
 import memoizeOne from 'memoize-one'
 
-import Header from '../Header/Header'
-import Loading from '../Loading'
+import Header from '../../Header/Header'
+import Loading from '../../Loading'
 
 const useStyles = () =>
   makeStyles({
