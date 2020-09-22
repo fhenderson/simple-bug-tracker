@@ -1,7 +1,5 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
 import Container from '@material-ui/core/Container'
-import Toolbar from '@material-ui/core/Toolbar'
 import { makeStyles } from '@material-ui/styles'
 import memoizeOne from 'memoize-one'
 
@@ -32,11 +30,7 @@ const BugsLayout = (props: IProps) => {
     classes && (
       <>
         <React.Suspense fallback={<Loading />}>
-          <AppBar position="static">
-            <Toolbar>
-              <Header />
-            </Toolbar>
-          </AppBar>
+          <Header />
         </React.Suspense>
         <Container className={classes().content} disableGutters={true} maxWidth={false}>
           {children}
