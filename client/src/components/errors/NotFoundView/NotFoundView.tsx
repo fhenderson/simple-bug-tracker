@@ -1,7 +1,9 @@
 import React from 'react'
+import { useHistory, withRouter } from 'react-router-dom'
 import { Box, Container, makeStyles, Typography } from '@material-ui/core'
-import ReportOffOutlinedIcon from '@material-ui/icons/ReportOffOutlined'
+import Button from '@material-ui/core/Button'
 
+import PATH_CODES from '../../../routing/pathnames'
 import Page from '../../Page/Page'
 
 const useStyles = makeStyles(theme => ({
@@ -20,24 +22,29 @@ const useStyles = makeStyles(theme => ({
 
 const NotFoundView = () => {
   const classes = useStyles()
-
+  const history = useHistory()
+  const goHome = () => {
+    history.push(PATH_CODES.ROOT)
+  }
   return (
     <Page className={classes.root} title="404">
-      <Box display="flex" flexDirection="column" height="100%" justifyContent="center">
+      <Box display="flex" flexDirection="column" height="100%" justifyContent="center" alignItems="center">
         <Container maxWidth="md">
-          <Typography align="center" color="textPrimary" variant="h1">
-            404: The page you are looking for isn’t here
+          <Typography align="center" color="textPrimary" variant="h3">
+            Page not found!
           </Typography>
-          <Typography align="center" color="textPrimary" variant="subtitle2">
-            You either tried some shady route or you came here by mistake. Whichever it is, try using the navigation
+          <br />
+          <Typography align="center" color="textPrimary" variant="body1">
+            Use the home button to return to the root of the application.
           </Typography>
-          <Box textAlign="center">
-            <ReportOffOutlinedIcon />
-          </Box>
+          <br />
+          <Button variant={'outlined'} onClick={goHome}>
+            Home
+          </Button>
         </Container>
       </Box>
     </Page>
   )
 }
 
-export default NotFoundView
+export default withRouter(NotFoundView)

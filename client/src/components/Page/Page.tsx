@@ -1,5 +1,8 @@
 import React, { forwardRef } from 'react'
 import { Helmet } from 'react-helmet'
+import useTheme from '@material-ui/core/styles/useTheme'
+
+import ThemeProvider from '../../themes/CustomThemeProvider'
 
 interface IOwnProps {
   children: any
@@ -11,12 +14,13 @@ interface IOwnProps {
 type IProps = IOwnProps
 
 const Page = forwardRef(({ children, title = '', ...rest }: IProps, ref: any) => {
+  const theme = useTheme()
   return (
     <div ref={ref} {...rest}>
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      {children}
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </div>
   )
 })
