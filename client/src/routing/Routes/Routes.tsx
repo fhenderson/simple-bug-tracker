@@ -16,15 +16,9 @@ const Routes = (props: Props) => {
   return (
     <Router history={props.history}>
       <Switch>
-        <Route path={PATH_CODES.ROOT} exact component={LoginComponent} />
-        <Route
-          key={'loginPage'}
-          id={'loginPage'}
-          path={PATH_CODES.LOGIN}
-          component={LoginComponent}
-          privateRedirectPath={PATH_CODES.BUGS}
-        />
-        <PrivateRoute path={PATH_CODES.BUGS} component={BugsList} {...props} />
+        <Route path={PATH_CODES.ROOT} exact component={() => <h2>Home</h2>} />
+        <PrivateRoute id={'BugsList'} path={PATH_CODES.BUGS} component={BugsList} {...props} />
+        <Route key={'loginPage'} id={'loginPage'} path={PATH_CODES.LOGIN} component={LoginComponent} />
         <ErrorLayoutRoute id={'pageNotFound_CatchAll'} />
       </Switch>
     </Router>
