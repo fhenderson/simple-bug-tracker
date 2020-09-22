@@ -11,6 +11,7 @@ type Props = {
   location: any | undefined
   component: any
   path: string | undefined
+  exact?: any
 }
 
 function PrivateRoute(props: Props) {

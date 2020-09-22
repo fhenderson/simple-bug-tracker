@@ -1,20 +1,14 @@
 import React from 'react'
 import { useHistory, withRouter } from 'react-router-dom'
 import { Box } from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import TextField from '@material-ui/core/TextField'
-import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 import PATH_CODES from '../../routing/pathnames'
 import { authenticationService } from '../../service/authenticationService'
 import Header from '../Header/Header'
-
-// type Props = {
-//   history: any
-// }
 
 const LoginComponent = (): JSX.Element => {
   const history = useHistory()
@@ -55,11 +49,7 @@ const LoginComponent = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <AppBar position="static">
-        <Toolbar variant={'dense'}>
-          <Header />
-        </Toolbar>
-      </AppBar>
+      <Header />
       <Container maxWidth="sm">
         <Box m={1} pt={2}>
           <Typography variant="h4" style={styles.center}>

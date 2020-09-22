@@ -1,18 +1,11 @@
 import React, { PureComponent } from 'react'
 import { Typography } from '@material-ui/core'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface OwnProps {
-  // nothing yet
-}
-
-type Props = OwnProps
-
-class BugsList extends PureComponent<Props> {
+class BugsList extends PureComponent {
   render() {
     return (
       <>
-        <Typography variant={'h1'} color={'primary'}>
+        <Typography variant={'h3'} color={'primary'}>
           Bugs list
         </Typography>
       </>
