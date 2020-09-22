@@ -48,3 +48,4 @@ Minimalist bug tracker using MongoDB, Nest.js, React and Redux
     - [ ] Add User Roles: Admin, User
         - [ ] Add Administration Portal
         - [ ] Add User listing and role modification      
+    - [ ] Implement localization in English and French
