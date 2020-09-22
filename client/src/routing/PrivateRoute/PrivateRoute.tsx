@@ -1,11 +1,12 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
-import tokenService from '../../service/tokenService'
+import { getToken } from '../../lib/token'
 import PATH_CODES from '../pathnames'
 import StandardLayoutRoute from '../StandardLayoutRoute/StandardLayoutRoute'
 
 type Props = {
+  id: string | undefined
   history: any | undefined
   location: any | undefined
   component: any
@@ -14,11 +15,12 @@ type Props = {
 
 function PrivateRoute(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { component: Component, ...rest } = props
-  const token = tokenService.currentTokenValue
-
+  const { component: Component, id, ...rest } = props
+  // Todo: Add real token validation
+  const token = getToken()
   return (
     <Route
+      id={id}
       {...rest}
       render={() =>
         token ? (

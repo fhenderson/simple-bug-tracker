@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { useHistory, withRouter } from 'react-router-dom'
 import { Box } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
@@ -10,17 +10,15 @@ import Typography from '@material-ui/core/Typography'
 
 import PATH_CODES from '../../routing/pathnames'
 import { authenticationService } from '../../service/authenticationService'
-import tokenService from '../../service/tokenService'
 import Header from '../Header/Header'
 
-type Props = {
-  history: any
-}
+// type Props = {
+//   history: any
+// }
 
-const LoginComponent = (props: Props): JSX.Element => {
-  const { history } = props
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [message, setMessage] = React.useState()
+const LoginComponent = (): JSX.Element => {
+  const history = useHistory()
+  const [message, setMessage] = React.useState('')
   const [username, setUsername] = React.useState('john')
   const [password, setPassword] = React.useState('changeme')
 
@@ -43,18 +41,14 @@ const LoginComponent = (props: Props): JSX.Element => {
     }
   }
 
-  function login(e: { preventDefault: () => void }) {
+  async function login(e: { preventDefault: () => void }) {
     e.preventDefault()
-    const credentials = { username, password }
-    authenticationService.login(credentials).then(res => {
+    await authenticationService.login({ username, password }).then(res => {
       console.log({ res })
-      if (res.status === 201) {
-        if (res?.data?.access_token) {
-          tokenService.updateCurrentTokenValue(res.data.access_token)
-        }
-        history.push(PATH_CODES.BUGS)
+      if (res.status === 200) {
+        history?.push(PATH_CODES.BUGS)
       } else {
-        setMessage(res.data.message)
+        setMessage('ERROR')
       }
     })
   }
