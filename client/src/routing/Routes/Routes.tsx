@@ -1,7 +1,9 @@
 import React from 'react'
 import { Route, Router, Switch, withRouter } from 'react-router-dom'
 
+import BugsList from '../../components/Bugs/BugsList'
 import LoginComponent from '../../components/LoginComponent/LoginComponent'
+import { ErrorLayoutRoute } from '../index'
 import PATH_CODES from '../pathnames'
 import PrivateRoute from '../PrivateRoute'
 
@@ -20,9 +22,10 @@ const Routes = (props: Props) => {
           id={'loginPage'}
           path={PATH_CODES.LOGIN}
           component={LoginComponent}
-          privateRedirectPath={PATH_CODES.HOME}
+          privateRedirectPath={PATH_CODES.BUGS}
         />
-        <PrivateRoute component={() => <h1>Home</h1>} path={PATH_CODES.HOME} {...props} />
+        <PrivateRoute path={PATH_CODES.BUGS} component={BugsList} {...props} />
+        <ErrorLayoutRoute id={'pageNotFound_CatchAll'} />
       </Switch>
     </Router>
   )

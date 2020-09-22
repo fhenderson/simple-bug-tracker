@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
+import PATH_CODES from '../../routing/pathnames'
 import { authenticationService } from '../../service/authenticationService'
 import tokenService from '../../service/tokenService'
 import Header from '../Header/Header'
@@ -51,7 +52,7 @@ const LoginComponent = (props: Props): JSX.Element => {
         if (res?.data?.access_token) {
           tokenService.updateCurrentTokenValue(res.data.access_token)
         }
-        history.push('/home')
+        history.push(PATH_CODES.BUGS)
       } else {
         setMessage(res.data.message)
       }
@@ -61,7 +62,7 @@ const LoginComponent = (props: Props): JSX.Element => {
   return (
     <React.Fragment>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar variant={'dense'}>
           <Header />
         </Toolbar>
       </AppBar>
