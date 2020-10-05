@@ -1,6 +1,9 @@
+import { IBugs } from '../dummyData'
+
 export interface ICols {
-  id: string;
+  id: keyof IBugs;
   label: string;
   minWidth?: number;
   align: string;
+  numeric: boolean
 }

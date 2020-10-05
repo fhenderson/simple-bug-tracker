@@ -1,18 +1,12 @@
-interface IBugs {
+export interface IBugs {
   _id: string
   index: number
   guid:string
-  name: {
-    first: string
-    last: string
-  }
-  company: string
-  email: string
   assignTo: string
   reportedBy: string
   description: string
   created: string
-  due?: string
+  due: string
   severity: string
   status: string
   reproducible: string
@@ -21,323 +15,255 @@ interface IBugs {
 
 export const bugs: IBugs[] = [
   {
-    "_id": "5f7a69e09b2ad163d4e5bc48",
+    "_id": "5f7a7d3af08670bb47c6e8e6",
     "index": 0,
-    "guid": "ca04e285-5ceb-4f9e-9b3a-9e82d41d85ea",
-    "name": {
-      "first": "Desiree",
-      "last": "Oliver"
-    },
-    "company": "CALCU",
-    "email": "desiree.oliver@calcu}.com",
-    "assignTo": "Hugh Henderson",
+    "guid": "9b57ba35-01bf-4679-8362-bc625f63a2bf",
+    "assignTo": "Kerri Burnett",
     "reportedBy": "George Hendricks",
-    "description": "Voluptate reprehenderit in esse veniam sint occaecat sit amet excepteur reprehenderit eiusmod.",
-    "created": "06-13-2020",
-    "due": "11-24-2020",
+    "description": "Tempor adipisicing duis laborum sunt ea sint cupidatat cupidatat minim tempor mollit sit esse.",
+    "created": "05-22-2020",
+    "due": "12-18-2020",
     "severity": "Show Stopper",
-    "status": "In Progress",
+    "status": "Reopen",
     "reproducible": "Rarely",
-    "classification": "Performance"
-  },
-  {
-    "_id": "5f7a69e0cfd5d52d60a89f63",
-    "index": 1,
-    "guid": "b30685a5-d3a8-4e28-b0a3-b2d51bd47fa8",
-    "name": {
-      "first": "Cooley",
-      "last": "Harper"
-    },
-    "company": "BIOLIVE",
-    "email": "cooley.harper@biolive}.com",
-    "assignTo": "Hugh Henderson",
-    "reportedBy": "George Hendricks",
-    "description": "Eiusmod ipsum laborum dolor pariatur laborum consequat dolore magna eu anim est velit do qui.",
-    "created": "09-15-2020",
-    "due": "12-21-2020",
-    "severity": "Show Stopper",
-    "status": "In Progress",
-    "reproducible": "Sometimes",
     "classification": "Enhancement"
   },
   {
-    "_id": "5f7a69e0e284a4e9ec299c33",
-    "index": 2,
-    "guid": "48175219-6708-48e1-bcef-548e1a862b3e",
-    "name": {
-      "first": "Lesley",
-      "last": "Leon"
-    },
-    "company": "INFOTRIPS",
-    "email": "lesley.leon@infotrips}.com",
-    "assignTo": "Hugh Henderson",
-    "reportedBy": "Hugh Henderson",
-    "description": "Tempor aliquip dolor esse sit mollit amet velit qui ex officia adipisicing non duis amet.",
-    "created": "05-17-2020",
-    "due": "11-11-2020",
-    "severity": "Minor",
-    "status": "Open",
-    "reproducible": "Always",
+    "_id": "5f7a7d3a55df735728dfc23b",
+    "index": 1,
+    "guid": "8e413c83-2c84-46ea-b229-161cd7c97984",
+    "assignTo": "Eve Chaney",
+    "reportedBy": "Eve Chaney",
+    "description": "Amet officia do amet minim Lorem cillum et nisi.",
+    "created": "03-16-2020",
+    "due": "11-28-2020",
+    "severity": "Critical",
+    "status": "Closed",
+    "reproducible": "Not Applicable",
     "classification": "Feature (New)"
   },
   {
-    "_id": "5f7a69e06cf3cab02de53514",
+    "_id": "5f7a7d3adf9f069c63d50773",
+    "index": 2,
+    "guid": "9134c06e-f8d9-40f1-942d-9ffa38437bd8",
+    "assignTo": "Hugh Henderson",
+    "reportedBy": "Alisa Lowery",
+    "description": "Exercitation adipisicing dolore id reprehenderit.",
+    "created": "05-04-2020",
+    "due": "10-16-2020",
+    "severity": "Minor",
+    "status": "Closed",
+    "reproducible": "Unable",
+    "classification": "Enhancement"
+  },
+  {
+    "_id": "5f7a7d3af23ef2df08b770dd",
     "index": 3,
-    "guid": "eda816ed-5d7e-4c89-944d-fc77ea2bf66f",
-    "name": {
-      "first": "Reyes",
-      "last": "Garza"
-    },
-    "company": "EMOLTRA",
-    "email": "reyes.garza@emoltra}.com",
-    "assignTo": "George Hendricks",
-    "reportedBy": "Eve Chaney",
-    "description": "Sit do dolor mollit consequat.",
-    "created": "03-14-2020",
-    "due": "12-05-2020",
+    "guid": "e82e28ba-b18a-40d9-9e13-13e182f93af9",
+    "assignTo": "Johns Phelps",
+    "reportedBy": "George Hendricks",
+    "description": "Duis irure ullamco Lorem adipisicing et mollit incididunt.",
+    "created": "07-03-2020",
+    "due": "11-02-2020",
+    "severity": "Major",
+    "status": "Closed",
+    "reproducible": "Sometimes",
+    "classification": "None"
+  },
+  {
+    "_id": "5f7a7d3af6744564119ad7d3",
+    "index": 4,
+    "guid": "85870f3f-e11e-49a6-885f-8ea9849a6ca4",
+    "assignTo": "Alisa Lowery",
+    "reportedBy": "Alisa Lowery",
+    "description": "Reprehenderit nostrud sint ullamco ad.",
+    "created": "03-12-2020",
+    "due": "11-11-2020",
     "severity": "Major",
     "status": "In Progress",
-    "reproducible": "Sometimes",
+    "reproducible": "Always",
+    "classification": "Performance"
+  },
+  {
+    "_id": "5f7a7d3a3a1ff7f8e258a256",
+    "index": 5,
+    "guid": "aa015afa-37ce-4ff5-9356-96ed5602a05e",
+    "assignTo": "George Hendricks",
+    "reportedBy": "Hugh Henderson",
+    "description": "Elit non dolor adipisicing deserunt anim minim eu deserunt adipisicing irure.",
+    "created": "05-29-2020",
+    "due": "11-09-2020",
+    "severity": "Critical",
+    "status": "Reopen",
+    "reproducible": "Never tried",
+    "classification": "UI/Usability"
+  },
+  {
+    "_id": "5f7a7d3ae57df033d8933257",
+    "index": 6,
+    "guid": "28e0d936-f2d5-40dc-94c6-8046b6b8e6d3",
+    "assignTo": "Johns Phelps",
+    "reportedBy": "George Hendricks",
+    "description": "Est velit sunt pariatur reprehenderit commodo anim do sunt commodo cupidatat dolor ipsum.",
+    "created": "08-20-2020",
+    "due": "11-20-2020",
+    "severity": "Critical",
+    "status": "Open",
+    "reproducible": "Rarely",
+    "classification": "Enhancement"
+  },
+  {
+    "_id": "5f7a7d3afe3f440b223a7112",
+    "index": 7,
+    "guid": "74593c93-fa94-4e3a-b6bc-fbb64932751d",
+    "assignTo": "Alisa Lowery",
+    "reportedBy": "George Hendricks",
+    "description": "Sunt qui non deserunt ad ex sit eu irure id laboris cillum esse excepteur amet.",
+    "created": "07-21-2020",
+    "due": "12-30-2020",
+    "severity": "Minor",
+    "status": "Closed",
+    "reproducible": "Not Applicable",
+    "classification": "Enhancement"
+  },
+  {
+    "_id": "5f7a7d3a487765e7ad065f4b",
+    "index": 8,
+    "guid": "a2697e96-8b05-43f1-82ee-4e6c0297d6e0",
+    "assignTo": "Eve Chaney",
+    "reportedBy": "Johns Phelps",
+    "description": "Enim enim minim do qui.",
+    "created": "08-06-2020",
+    "due": "10-11-2020",
+    "severity": "Critical",
+    "status": "Reopen",
+    "reproducible": "Rarely",
     "classification": "Other bug"
   },
   {
-    "_id": "5f7a69e0a4ba36d7c4f049fb",
-    "index": 4,
-    "guid": "4584bcd3-c047-4793-a375-e43494a07bc7",
-    "name": {
-      "first": "Laverne",
-      "last": "Sherman"
-    },
-    "company": "VETRON",
-    "email": "laverne.sherman@vetron}.com",
-    "assignTo": "Kerri Burnett",
-    "reportedBy": "Hugh Henderson",
-    "description": "Dolor nisi officia dolor ut dolor commodo commodo sint enim.",
-    "created": "06-16-2020",
-    "due": "10-23-2020",
-    "severity": "Critical",
-    "status": "Open",
-    "reproducible": "Unable",
-    "classification": "Security"
-  },
-  {
-    "_id": "5f7a69e073dd2b71c6989e4a",
-    "index": 5,
-    "guid": "cf8836be-fbb5-4491-86af-f7d4fbaf6d08",
-    "name": {
-      "first": "Goodwin",
-      "last": "Mathis"
-    },
-    "company": "ENQUILITY",
-    "email": "goodwin.mathis@enquility}.com",
-    "assignTo": "Kerri Burnett",
-    "reportedBy": "Kerri Burnett",
-    "description": "Exercitation incididunt occaecat irure in proident aliqua.",
-    "created": "09-16-2020",
-    "due": "10-22-2020",
-    "severity": "Critical",
-    "status": "Open",
-    "reproducible": "Not Applicable",
-    "classification": "Enhancement"
-  },
-  {
-    "_id": "5f7a69e0e95106fd6a06b6a9",
-    "index": 6,
-    "guid": "248d8da8-507c-4adf-9774-87d4b45d3066",
-    "name": {
-      "first": "Cleo",
-      "last": "Knapp"
-    },
-    "company": "ZILLACOM",
-    "email": "cleo.knapp@zillacom}.com",
-    "assignTo": "George Hendricks",
-    "reportedBy": "Kerri Burnett",
-    "description": "Reprehenderit voluptate tempor veniam officia aute.",
-    "created": "01-03-2020",
-    "due": "11-23-2020",
-    "severity": "Critical",
-    "status": "Open",
-    "reproducible": "Always",
-    "classification": "Performance"
-  },
-  {
-    "_id": "5f7a69e076fb0570d32ce819",
-    "index": 7,
-    "guid": "e0e60ec3-1238-4853-9c28-675e038b15e5",
-    "name": {
-      "first": "Eve",
-      "last": "Wright"
-    },
-    "company": "ISOTRONIC",
-    "email": "eve.wright@isotronic}.com",
-    "assignTo": "Johns Phelps",
-    "reportedBy": "Johns Phelps",
-    "description": "Velit proident eu dolor cillum consequat elit nisi reprehenderit officia pariatur.",
-    "created": "05-05-2020",
-    "due": "12-08-2020",
-    "severity": "Critical",
-    "status": "Reopen",
-    "reproducible": "Not Applicable",
-    "classification": "Performance"
-  },
-  {
-    "_id": "5f7a69e00dfee2218bad4456",
-    "index": 8,
-    "guid": "29dc674f-10b4-4cbf-96fe-c4d55cb708dd",
-    "name": {
-      "first": "May",
-      "last": "Cardenas"
-    },
-    "company": "BUNGA",
-    "email": "may.cardenas@bunga}.com",
-    "assignTo": "George Hendricks",
-    "reportedBy": "Alisa Lowery",
-    "description": "Culpa consectetur nisi Lorem esse anim reprehenderit aliqua culpa proident laborum nostrud.",
-    "created": "05-04-2020",
-    "due": "12-04-2020",
-    "severity": "Major",
-    "status": "Open",
-    "reproducible": "Not Applicable",
-    "classification": "Performance"
-  },
-  {
-    "_id": "5f7a69e001e238a3521b76d9",
+    "_id": "5f7a7d3adbd848d2ea3d8ba7",
     "index": 9,
-    "guid": "c0e09747-4060-4ecc-a393-e0772f926a6e",
-    "name": {
-      "first": "Oneil",
-      "last": "Britt"
-    },
-    "company": "STRALOY",
-    "email": "oneil.britt@straloy}.com",
+    "guid": "3d4e7cdb-fb53-41e2-8c82-a1f63fe82741",
+    "assignTo": "Johns Phelps",
+    "reportedBy": "Eve Chaney",
+    "description": "Ad eiusmod cillum eu laboris dolor.",
+    "created": "08-24-2020",
+    "due": "12-22-2020",
+    "severity": "Critical",
+    "status": "Closed",
+    "reproducible": "Rarely",
+    "classification": "Crash/Hang"
+  },
+  {
+    "_id": "5f7a7d3a5631951ed955ee1c",
+    "index": 10,
+    "guid": "8b11dc8c-f1d6-4024-8421-444766ba79dc",
     "assignTo": "Alisa Lowery",
     "reportedBy": "Alisa Lowery",
-    "description": "Reprehenderit exercitation consequat culpa fugiat ut ipsum deserunt ipsum exercitation irure duis sunt.",
-    "created": "08-23-2020",
-    "due": "10-16-2020",
+    "description": "Eu elit ex aliquip aute deserunt irure ex laborum pariatur fugiat consectetur mollit ea anim.",
+    "created": "07-13-2020",
+    "due": "12-27-2020",
     "severity": "Show Stopper",
-    "status": "Reopen",
-    "reproducible": "Not Applicable",
-    "classification": "Enhancement"
-  },
-  {
-    "_id": "5f7a69e0511b7b2763d8122e",
-    "index": 10,
-    "guid": "c7b1f1d7-c2b6-4302-9ac3-d70551b44e10",
-    "name": {
-      "first": "Glenda",
-      "last": "Espinoza"
-    },
-    "company": "DANCERITY",
-    "email": "glenda.espinoza@dancerity}.com",
-    "assignTo": "Hugh Henderson",
-    "reportedBy": "Eve Chaney",
-    "description": "Ad laborum exercitation aliquip ipsum anim occaecat aute proident cillum quis officia sint.",
-    "created": "09-15-2020",
-    "due": "11-02-2020",
-    "severity": "Major",
     "status": "Open",
-    "reproducible": "Never tried",
-    "classification": "Feature (New)"
+    "reproducible": "Rarely",
+    "classification": "Performance"
   },
   {
-    "_id": "5f7a69e003127388884f892d",
+    "_id": "5f7a7d3abce3ba02279a0786",
     "index": 11,
-    "guid": "85d65c41-7520-4b38-8c14-39914697136c",
-    "name": {
-      "first": "Sondra",
-      "last": "Love"
-    },
-    "company": "ZYTRAX",
-    "email": "sondra.love@zytrax}.com",
-    "assignTo": "George Hendricks",
+    "guid": "8cfe5226-2a5f-41dc-824e-15cb0f80e86f",
+    "assignTo": "Kerri Burnett",
     "reportedBy": "Alisa Lowery",
-    "description": "Pariatur sint exercitation dolore nisi officia mollit elit.",
-    "created": "09-08-2020",
-    "due": "10-11-2020",
-    "severity": "Minor",
+    "description": "Id mollit proident eu aliquip nisi ut incididunt magna pariatur fugiat.",
+    "created": "04-03-2020",
+    "due": "11-18-2020",
+    "severity": "Critical",
     "status": "In Progress",
     "reproducible": "Sometimes",
-    "classification": "Security"
+    "classification": "Crash/Hang"
   },
   {
-    "_id": "5f7a69e085f20b7864c8ad37",
+    "_id": "5f7a7d3a01d211e2ee133bd9",
     "index": 12,
-    "guid": "6c84d891-9618-41e8-96a8-f811c576275b",
-    "name": {
-      "first": "Kendra",
-      "last": "Gonzales"
-    },
-    "company": "ORBEAN",
-    "email": "kendra.gonzales@orbean}.com",
-    "assignTo": "George Hendricks",
+    "guid": "050ef0ee-ae12-4c0b-a2d6-d85541b4b6d0",
+    "assignTo": "Alisa Lowery",
     "reportedBy": "Alisa Lowery",
-    "description": "Sit velit incididunt ut reprehenderit minim adipisicing dolore magna tempor quis mollit duis nisi.",
-    "created": "04-02-2020",
-    "due": "11-22-2020",
+    "description": "Cillum fugiat cillum ex aliqua sit laboris sit officia ex duis ut enim amet culpa.",
+    "created": "01-25-2020",
+    "due": "11-12-2020",
+    "severity": "Show Stopper",
+    "status": "In Progress",
+    "reproducible": "Unable",
+    "classification": "Other bug"
+  },
+  {
+    "_id": "5f7a7d3a7e450f235b20dd70",
+    "index": 13,
+    "guid": "9705ac02-3cb3-423f-af50-43190de7938e",
+    "assignTo": "Alisa Lowery",
+    "reportedBy": "Kerri Burnett",
+    "description": "Incididunt est consectetur duis consequat sint excepteur.",
+    "created": "06-15-2020",
+    "due": "12-18-2020",
     "severity": "Critical",
-    "status": "Reopen",
+    "status": "In Progress",
     "reproducible": "Rarely",
     "classification": "Security"
   },
   {
-    "_id": "5f7a69e0c694fd626bfa6957",
-    "index": 13,
-    "guid": "71a68f39-46da-45a3-8d8a-3e4f598b4be5",
-    "name": {
-      "first": "Ruiz",
-      "last": "Stevens"
-    },
-    "company": "XIXAN",
-    "email": "ruiz.stevens@xixan}.com",
-    "assignTo": "Hugh Henderson",
-    "reportedBy": "George Hendricks",
-    "description": "Non eiusmod aliquip esse ipsum fugiat ea ad ea qui ipsum.",
-    "created": "09-19-2020",
-    "due": "12-14-2020",
+    "_id": "5f7a7d3a290683577bd97fda",
+    "index": 14,
+    "guid": "fbe88a5d-be4d-421a-b020-159fd0469dac",
+    "assignTo": "Eve Chaney",
+    "reportedBy": "Alisa Lowery",
+    "description": "Aliquip aliqua quis sint veniam quis incididunt voluptate veniam.",
+    "created": "05-30-2020",
+    "due": "12-01-2020",
     "severity": "Major",
     "status": "Reopen",
-    "reproducible": "Unable",
-    "classification": "Performance"
+    "reproducible": "Not Applicable",
+    "classification": "Enhancement"
   },
   {
-    "_id": "5f7a69e0aed23d987c65f36a",
-    "index": 14,
-    "guid": "b34ed269-2c07-459a-9077-8de7ac26aaa1",
-    "name": {
-      "first": "Cecile",
-      "last": "Hopkins"
-    },
-    "company": "JASPER",
-    "email": "cecile.hopkins@jasper}.com",
-    "assignTo": "Alisa Lowery",
-    "reportedBy": "Eve Chaney",
-    "description": "Deserunt eiusmod laboris amet non labore incididunt cillum nisi adipisicing.",
-    "created": "05-04-2020",
-    "due": "12-27-2020",
-    "severity": "Minor",
-    "status": "To be tested",
-    "reproducible": "Rarely",
-    "classification": "Performance"
-  },
-  {
-    "_id": "5f7a69e000884bbc9d8783f8",
+    "_id": "5f7a7d3aee4df5f204a9c60d",
     "index": 15,
-    "guid": "cd730564-c964-4650-9d3b-442211e77608",
-    "name": {
-      "first": "Tiffany",
-      "last": "Irwin"
-    },
-    "company": "GENEKOM",
-    "email": "tiffany.irwin@genekom}.com",
-    "assignTo": "George Hendricks",
-    "reportedBy": "Eve Chaney",
-    "description": "Mollit dolore ex laborum sit aliqua laborum et magna laboris mollit quis excepteur.",
-    "created": "02-13-2020",
-    "due": "12-03-2020",
-    "severity": "Show Stopper",
-    "status": "To be tested",
-    "reproducible": "Rarely",
-    "classification": "Security"
+    "guid": "9d81b29c-28dd-4e3a-be6b-f0fa4c8089ee",
+    "assignTo": "Alisa Lowery",
+    "reportedBy": "Johns Phelps",
+    "description": "Qui mollit id ad ad cupidatat aliqua amet irure officia ut.",
+    "created": "04-12-2020",
+    "due": "11-22-2020",
+    "severity": "Minor",
+    "status": "Open",
+    "reproducible": "Not Applicable",
+    "classification": "UI/Usability"
+  },
+  {
+    "_id": "5f7a7d3ae516e6f31273f179",
+    "index": 16,
+    "guid": "b2b8fe16-18f7-4d19-8c46-50dd49d9a8b6",
+    "assignTo": "Eve Chaney",
+    "reportedBy": "Alisa Lowery",
+    "description": "Aliquip nostrud esse sint mollit officia labore.",
+    "created": "01-04-2020",
+    "due": "10-21-2020",
+    "severity": "Minor",
+    "status": "Open",
+    "reproducible": "Not Applicable",
+    "classification": "Data loss"
+  },
+  {
+    "_id": "5f7a7d3ac68532395e38fcb8",
+    "index": 17,
+    "guid": "0940388b-996a-4d2a-8629-eb5824a51144",
+    "assignTo": "Johns Phelps",
+    "reportedBy": "Alisa Lowery",
+    "description": "Commodo magna culpa Lorem adipisicing.",
+    "created": "09-27-2020",
+    "due": "12-06-2020",
+    "severity": "Minor",
+    "status": "Open",
+    "reproducible": "Not Applicable",
+    "classification": "None"
   }
 ]
