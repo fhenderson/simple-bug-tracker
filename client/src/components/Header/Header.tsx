@@ -10,7 +10,7 @@ import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined'
 
 import { getToken } from '../../lib/token'
 import { PATH_CODES } from '../../routing'
-import authenticationService from '../../service/authenticationService'
+import authenticationService from '../../services/authenticationService'
 import MenuItems from '../menu/MenuItems/MenuItems'
 import ToggleTheme from '../ToggleTheme/ToggleTheme'
 

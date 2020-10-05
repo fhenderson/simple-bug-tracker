@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import StandardLayout from '../../components/layouts/StandardLayout/StandardLayout'
+import StandardLayout from '../../containers/layouts/StandardLayout/StandardLayout'
 
 type Props = {
   path: any

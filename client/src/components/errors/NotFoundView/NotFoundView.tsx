@@ -3,8 +3,8 @@ import { useHistory, withRouter } from 'react-router-dom'
 import { Box, Container, makeStyles, Typography } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
+import Page from '../../../containers/layouts/Page/Page'
 import PATH_CODES from '../../../routing/pathnames'
-import Page from '../../layouts/Page/Page'
 
 const useStyles = makeStyles(theme => ({
   root: {

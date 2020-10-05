@@ -1,4 +1,4 @@
-import LoginComponent from './LoginComponent'
+import LoginComponent from './LoginPage'
 
 describe('LoginComponent', function LoginComponentSpec() {
   it('it exists', () => {

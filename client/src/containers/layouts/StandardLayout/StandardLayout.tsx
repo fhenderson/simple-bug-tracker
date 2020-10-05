@@ -3,8 +3,8 @@ import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/styles'
 import memoizeOne from 'memoize-one'
 
-import Header from '../../Header/Header'
-import Loading from '../../Loading'
+import Header from '../../../components/Header/Header'
+import Loading from '../../../components/Loading'
 
 const useStyles = () =>
   makeStyles({

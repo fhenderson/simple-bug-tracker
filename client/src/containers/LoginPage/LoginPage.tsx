@@ -6,11 +6,11 @@ import Container from '@material-ui/core/Container'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
+import Header from '../../components/Header/Header'
 import PATH_CODES from '../../routing/pathnames'
-import { authenticationService } from '../../service/authenticationService'
-import Header from '../Header/Header'
+import { authenticationService } from '../../services/authenticationService'
 
-const LoginComponent = (): JSX.Element => {
+const LoginPage = (): JSX.Element => {
   const history = useHistory()
   const [message, setMessage] = React.useState('')
   const [username, setUsername] = React.useState('john')
@@ -101,4 +101,4 @@ const styles = {
   },
 }
 
-export default withRouter(LoginComponent)
+export default withRouter(LoginPage)

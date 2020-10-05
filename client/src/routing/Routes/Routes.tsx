@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Router, Switch, withRouter } from 'react-router-dom'
 
-import BugsList from '../../components/Bugs/BugsList'
-import Home from '../../components/Home/Home'
-import LoginComponent from '../../components/LoginComponent/LoginComponent'
+import BugsList from '../../containers/Bugs/BugsList'
+import Home from '../../containers/Home/Home'
+import LoginComponent from '../../containers/LoginPage/LoginPage'
 import { ErrorLayoutRoute } from '../index'
 import PATH_CODES from '../pathnames'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'

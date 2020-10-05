@@ -1,5 +1,10 @@
 import React from 'react'
 import { createMuiTheme, Theme, ThemeProvider as MuiThemeProvider } from '@material-ui/core'
+import cyan from '@material-ui/core/colors/cyan'
+import green from '@material-ui/core/colors/green'
+import orange from '@material-ui/core/colors/orange'
+import purple from '@material-ui/core/colors/purple'
+import red from '@material-ui/core/colors/red'
 import { useTheme } from '@material-ui/core/styles'
 
 import Fonts from '../assets/fonts'
@@ -62,6 +67,44 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
               Fonts.RobotoMedium,
               Fonts.RobotoBold,
             ],
+          },
+        },
+        // Style sheet name ⚛️
+        MuiTableRow: {
+          // Name of the rule
+          head: {
+            // CSS
+            // backgroundColor: 'red',
+          },
+        },
+        // Style sheet name ⚛️
+        MuiTablePagination: {
+          // Name of the rule
+          spacer: {
+            // CSS
+            // display: 'none',
+          },
+        },
+        MuiTableCell: {
+          root: {
+            '&.statusClose': {
+              color: themeOptions.paletteType === 'light' ? purple['500'] : purple['200'],
+            },
+            '&.statusOpen': {
+              color: themeOptions.paletteType === 'light' ? cyan['500'] : cyan['200'],
+            },
+            '&.statusReOpen': {
+              color: orange['500'],
+            },
+            '&.statusInProgress': {
+              color: green['500'],
+            },
+            '&.statusToBeTested': {
+              color: red['500'],
+            },
+          },
+          stickyHeader: {
+            // backgroundColor: themeOptions.paletteType === 'light' ? 'lightgrey' : '#000',
           },
         },
       },
