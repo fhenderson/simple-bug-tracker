@@ -1,9 +1,12 @@
 import React from 'react'
-import { TableContainer, Typography } from '@material-ui/core'
+import { Select, TableContainer, Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
+import FormControl from '@material-ui/core/FormControl'
 import IconButton from '@material-ui/core/IconButton'
+import InputLabel from '@material-ui/core/InputLabel'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import useTheme from '@material-ui/core/styles/useTheme'
@@ -19,6 +22,7 @@ import FilterListIcon from '@material-ui/icons/FilterList'
 import clsx from 'clsx'
 
 import SeverityIcon from '../components/severity/SeverityIcon'
+import { SEVERITY } from '../constants'
 import { bugs, IBugs } from '../dummyData'
 
 import { columns } from './columns'
@@ -109,6 +113,17 @@ const useStyles = makeStyles(theme => ({
     ...theme.mixins.toolbar,
     justifyContent: 'space-between',
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  filterTitle: {
+    alignSelf: 'flex-end',
+    margin: '0.5em',
+  },
 }))
 
 export default function BugsTable() {
@@ -119,8 +134,12 @@ export default function BugsTable() {
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
   const [open, setOpen] = React.useState(false)
+  const [state, setState] = React.useState<{ severity: string | number; name: string }>({
+    severity: '',
+    name: 'hai',
+  })
 
-  const rows = bugs
+  const [rows, setRows] = React.useState<IBugs[]>(bugs)
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: keyof IBugs) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -145,8 +164,28 @@ export default function BugsTable() {
   const hideFilters = () => {
     setOpen(false)
   }
+  const clearFilters = () => {
+    setState({
+      severity: '',
+      name: '',
+    })
+    setRows(bugs)
+  }
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
+
+  const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+    const name = event.target.name as keyof typeof state
+    setState({
+      ...state,
+      [name]: event.target.value,
+    })
+  }
+  React.useEffect(() => {
+    if (state?.severity) {
+      setRows(bugs.filter(r => r.severity === state.severity))
+    }
+  }, [state])
 
   return (
     <Paper className={classes.root}>
@@ -172,6 +211,40 @@ export default function BugsTable() {
             <FilterListIcon />
           </IconButton>
         </Tooltip>
+      </Box>
+      <Box
+        className={classes.toolbar}
+        p={1}
+        display={'flex'}
+        flexDirection={'row'}
+        justifyContent={'start'}
+        alignItems={'center'}
+      >
+        <Typography variant={'h6'} align={'left'} className={classes.filterTitle}>
+          Filters:
+        </Typography>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="severity">Severity</InputLabel>
+          <Select
+            native
+            value={state.severity}
+            onChange={handleChange}
+            inputProps={{
+              name: 'severity',
+              id: 'severity-native-simple',
+            }}
+          >
+            <option aria-label="None" value="" />
+            <option value={SEVERITY.SHOW_STOPPER}>Show Stopper</option>
+            <option value={SEVERITY.CRITICAL}>Critical</option>
+            <option value={SEVERITY.MAJOR}>Major</option>
+            <option value={SEVERITY.MINOR}>Minor</option>
+          </Select>
+        </FormControl>
+        <Divider variant={'middle'} />
+        <Button onClick={clearFilters} variant={'outlined'}>
+          Clear
+        </Button>
       </Box>
       <Drawer
         className={classes.drawer}
